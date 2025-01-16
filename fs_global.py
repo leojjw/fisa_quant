@@ -1,5 +1,6 @@
 import pandas as pd
 import yfinance as yf
+import datetime
 
 def fs(ticker):
     apple = yf.Ticker(ticker)
@@ -39,9 +40,10 @@ def fs(ticker):
     r.columns = ['매출액', '영업이익','당기순이익','자산총계', '부채총계', '자본총계', 'ROE(%)', 'ROA(%)', '부채비율','PER(배)','PBR(배)']
     r = r.T
     column_list = r.columns
+    column_list = [x.strftime('%Y-%m-%d') for x in column_list]
     multi_index = pd.MultiIndex.from_tuples(
-        [("연간", column_list[0].strftime('%Y-%m-%d')), ("연간", column_list[1].strftime('%Y-%m-%d')), ("연간", column_list[2].strftime('%Y-%m-%d')),
-        ("분기", column_list[3].strftime('%Y-%m-%d')), ("분기", column_list[4].strftime('%Y-%m-%d')), ("분기", column_list[5].strftime('%Y-%m-%d'))]
+        [("연간", column_list[0]), ("연간", column_list[1]), ("연간", column_list[2]),
+        ("분기", column_list[3]), ("분기", column_list[4]), ("분기", column_list[5])]
     )
 					
 # 컬럼에 멀티인덱스 적용
