@@ -1,0 +1,38 @@
+cookie:
+  expiry_days: 30
+  key: some_signature_key
+  name: some_cookie_name
+credentials:
+  usernames:
+    abc:
+      email: jesadf@asdf.com
+      first_name: jff
+      last_name: wff
+      logged_in: false
+      password: $2b$12$P.uGdH1BpPb2H85ocm5a4OhyA5E/gKmBrbnydsn.3d1TdS5NNDuCC
+      password_hint: '1234'
+      roles: null
+    joojungwoo:
+      email: leojjw@naver.com
+      failed_login_attempts: 0
+      first_name: joo
+      last_name: jungwoo
+      logged_in: false
+      password: $2b$12$uNaTgvGPG9rMbzOJHYaPQePw0DUfp1qHBrSq6l4O304qani6pKFpm
+    jsmith:
+      email: jsmith@gmail.com
+      failed_login_attempts: 0
+      first_name: John
+      last_name: Smith
+      logged_in: false
+      password: $2b$12$iWlVOac3uujRvTrXDi6wructXftKmo/GyQd6SMu5FmyX306kH.yFO
+    rbriggs:
+      email: rbriggs@gmail.com
+      failed_login_attempts: 0
+      first_name: Rebecca
+      last_name: Briggs
+      logged_in: false
+      password: $2b$12$uNaTgvGPG9rMbzOJHYaPQePw0DUfp1qHBrSq6l4O304qani6pKFpm
+pre-authorized:
+  emails:
+  - melsby@gmail.com

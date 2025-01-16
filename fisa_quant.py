@@ -4,7 +4,6 @@ import pandas as pd
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import datetime
-from fs_global import *
 
 # 대표 사이트 명
 st.title(' 🏦 우리 FISA 증권 🏦')
@@ -18,18 +17,14 @@ ticker_input = st.text_input('🧐 종목코드 또는 종목 티커를 입력�
 # 주식 데이터를 FinanceDataReader를 통해 가져오기
 data = None
 
-isGlobal = False
 # 사용자가 입력한 티커가 숫자형(한국 주식)인 경우
 if ticker_input.isdigit():
     ticker = ticker_input  # 숫자형 티커는 한국 주식
 else:
     ticker = ticker_input  # 외국 주식 티커 그대로 사용
-    isGlobal = True
 
 # 해당 종목에 대한 데이터를 FinanceDataReader에서 가져오기
 data = fdr.DataReader(ticker, start='2024-01-01')
-
-st.button('관심종목 등록')
 
 # 실시간 주가 표시
 st.subheader('💁🏻 실시간 주가')
@@ -37,9 +32,6 @@ st.write(f'현재가: {data.iloc[-1]["Close"]}')
 st.write(f'전날 종가: {data.iloc[-2]["Close"]}')
 st.write(f'최고가: {data["Close"].max()}')
 st.write(f'최저가: {data["Close"].min()}')
-
-if isGlobal:
-    st.dataframe(fs(ticker))
 
 # 과거 데이터 표시
 st.subheader('💁🏻 종목 히스토리')
@@ -158,4 +150,3 @@ st.write(f'개인투자자의 최근 한달간 총 매도량: {individual_sell}'
 st.write(f'공매도 현황: {short_selling}')
 st.write(f'현재 주식 가격에 대한 의견: {opinion}')
 st.write(f'의견 설명: {opinion_description}')
-
