@@ -66,7 +66,8 @@ smmap==5.0.2
 soupsieve==2.6
 streamlit==1.41.1
 streamlit-authenticator==0.4.1
-TA-Lib==0.4.28
+ta-lib-bin
+# TA-Lib==0.4.28
 # TA-Lib @ file:///C:/ITStudy/fisa_quant/TA_Lib-0.4.28-cp311-cp311-win_amd64.whl#sha256=642543307bc0797bb247aa4a2e3fe4c1bb770a607e03f04469028ad10bf8cf6e
 tenacity==9.0.0
 termcolor==2.3.0
